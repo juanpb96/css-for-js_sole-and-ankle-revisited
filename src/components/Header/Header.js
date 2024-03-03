@@ -55,6 +55,7 @@ const MainHeader = styled.div`
 
   @media ${QUERIES.tabletAndDown} {
     justify-content: space-between;
+    align-items: center;
     border-top: 4px solid ${COLORS.gray[900]};
   }
 
