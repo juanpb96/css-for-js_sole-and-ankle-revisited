@@ -6,14 +6,10 @@ import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
 import Icon from '../Icon';
+import UnstyledButton from '../UnstyledButton';
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
-
-  // For our mobile hamburger menu, we'll want to use a button
-  // with an onClick handler, something like this:
-  //
-  // <button onClick={() => setShowMobileMenu(true)}>
 
   return (
     <header>
@@ -25,7 +21,9 @@ const Header = () => {
         <IconsWrapper>
           <Icon id="shopping-bag" />
           <Icon id="search" />
-          <Icon id="menu" />
+          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
+            <Icon id="menu" />
+          </UnstyledButton>
         </IconsWrapper>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
