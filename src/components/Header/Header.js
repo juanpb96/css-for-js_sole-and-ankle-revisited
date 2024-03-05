@@ -45,11 +45,15 @@ const Header = () => {
 };
 
 const MainHeader = styled.div`
+  --grow-rate: 1rem, 4.5vw - 1.75rem;
+
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
+  padding-right: clamp(var(--grow-rate), 2rem);
   min-height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  overflow-x: auto;
 
   @media ${QUERIES.tabletAndDown} {
     justify-content: space-between;
@@ -64,8 +68,9 @@ const MainHeader = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(var(--grow-rate), 3rem);
   margin: 0px 48px;
+  margin-right: clamp(var(--grow-rate), 3rem);
 
   @media ${QUERIES.tabletAndDown} {
     display: none;
