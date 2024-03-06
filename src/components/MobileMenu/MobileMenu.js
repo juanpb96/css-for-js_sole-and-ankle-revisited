@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled, { keyframes } from 'styled-components/macro';
 import * as Dialog from '@radix-ui/react-dialog';
 
 import UnstyledButton from '../UnstyledButton';
@@ -46,11 +46,33 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   );
 };
 
+const overlayShow = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
 const DialogOverlay = styled(Dialog.Overlay)`
   background-color: var(--overlay-color);
   position: fixed;
   inset: 0;
+  animation: ${overlayShow} 350ms ease-in-out;
+`;
 
+const contentShow = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 `;
 
 const DialogContent = styled(Dialog.Content)`
@@ -63,6 +85,7 @@ const DialogContent = styled(Dialog.Content)`
   width: min(80%, ${300 / 16}rem);
   background-color: white;
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  animation: ${contentShow} 500ms cubic-bezier(.79,.14,.15,.86);
 
   &:focus { 
     outline: none;
