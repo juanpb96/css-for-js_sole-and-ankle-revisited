@@ -16,7 +16,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   return (
     <Dialog.Root open={isOpen}>
       <Dialog.Portal>
-        <Dialog.Overlay className="DialogOverlay" />
+        <DialogOverlay />
         <DialogContent>
           <DialogClose asChild>
             <UnstyledButton className="IconButton" onClick={onDismiss}>
@@ -45,6 +45,13 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
   );
 };
+
+const DialogOverlay = styled(Dialog.Overlay)`
+  background-color: var(--overlay-color);
+  position: fixed;
+  inset: 0;
+
+`;
 
 const DialogContent = styled(Dialog.Content)`
   display: none;
