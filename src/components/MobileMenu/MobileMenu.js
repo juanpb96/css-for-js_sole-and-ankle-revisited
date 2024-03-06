@@ -6,7 +6,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
-import { QUERIES, WEIGHTS } from '../../constants';
+import { QUERIES } from '../../constants';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
   if (!isOpen) {
@@ -97,7 +97,7 @@ const NavLink = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   color: var(--color-gray-900);
-  font-weight: ${WEIGHTS.medium};
+  font-weight: var(--font-weight-medium);
 
   &:first-of-type {
     color: var(--color-secondary);

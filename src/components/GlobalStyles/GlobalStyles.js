@@ -81,6 +81,11 @@ html {
   --color-gray-900: hsl(220deg 3% 20%);
   --color-primary: hsl(340deg 65% 47%);
   --color-secondary: hsl(240deg 60% 63%);
+
+  // Font weight
+  --font-weight-normal: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 800;
 }
 
 html, body, #root {
